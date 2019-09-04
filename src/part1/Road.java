@@ -1,10 +1,10 @@
 package part1;
 
 public class Road {
-    private int roadLength;
-    private int roadNumber;
+    private int roadLength; // Number of segments that make up the road
+    private int roadID;
 
-    public Road(int roadLength, int roadNumber){
+    public Road(int roadLength, int roadID){
 
     }
 
@@ -16,12 +16,12 @@ public class Road {
         return roadLength;
     }
 
-    public void setRoadNumber(int value){
-        roadNumber = value;
+    public void setRoadID(int value){
+        roadID = value;
     }
 
-    public int getRoadNumber()  {
-        return roadNumber;
+    public int getRoadID()  {
+        return roadID;
     }
 
 

@@ -1,12 +1,16 @@
 package part1;
 
 public class Car {
-    private int position;
+    private int position; // Segment of road that car is at
     private int carLength;
+    private int roadID; // Current road car is on
 
-    public Car(int position, int carLength){
-
+    Car(int roadID){
+        carLength = 1;
+        position = 0;
     }
+
+    public void setRoadID(int value) { roadID = value; }
 
     public void setPosition(int value)  {
         position = value;
