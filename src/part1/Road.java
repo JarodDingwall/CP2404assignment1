@@ -2,28 +2,17 @@ package part1;
 
 public class Road {
     private int roadLength; // Number of segments that make up the road
-    private int roadID;
+    private int roadNumber; // Current road car is on
 
-    public Road(int roadLength, int roadID){
-
+    public Road(int roadLength, int roadNumber){
     }
-
-    public void setRoadLength(int value){
-        roadLength = value;
+    public void setRoadLength(int value){ roadLength = value;
     }
-
-    public int getRoadLength()  {
-        return roadLength;
+    public int getRoadLength()  { return roadLength;
     }
-
-    public void setRoadID(int value){
-        roadID = value;
+    public void setRoadNumber(int value){ roadNumber = value;
     }
-
-    public int getRoadID()  {
-        return roadID;
+    public int getRoadNumber()  {
+        return roadNumber;
     }
-
-
-
 }
