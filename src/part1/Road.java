@@ -4,7 +4,8 @@ public class Road {
     private int roadLength; // Number of segments that make up the road
     private int roadNumber; // Current road car is on
 
-    public Road(int roadLength, int roadNumber){
+    public Road(int roadNumber){
+        roadLength = 4;
     }
     public void setRoadLength(int value){ roadLength = value;
     }

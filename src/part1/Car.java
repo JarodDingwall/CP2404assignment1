@@ -13,7 +13,7 @@ public class Car {
     }
     public int getRoadNumber()  { return roadNumber;
     }
-    public void setPosition(int value)  { position = value;
+    public void setPosition(int newPosition)  { position = newPosition;
     }
     public int getPosition()    { return position;
     }
