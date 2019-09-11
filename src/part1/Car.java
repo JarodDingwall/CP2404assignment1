@@ -5,7 +5,7 @@ public class Car {
     private int carLength;
     private int roadNumber; // Current road car is on
 
-    Car(int roadNumber){
+    Car(){
         carLength = 1;
         position = 0;
     }
