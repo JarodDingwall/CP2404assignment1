@@ -17,4 +17,9 @@ public class Road {
     public int getRoadNumber()  {
         return roadNumber;
     }
+
+    void newRoad(){
+        roadNumber++;
+        setRoadNumber(roadNumber);
+    }
 }

@@ -6,19 +6,16 @@ public class Main {
         Car car = new Car();
         Road road = new Road();
 
-        int position = car.getPosition();
-        int length = road.getRoadLength();
-
-        while (position < length) {
-            position++;
-            car.setPosition(position);
-            System.out.println(car.getPosition());
+        while (car.getPosition() < road.getRoadLength()) {
+            System.out.println("Car Position: " + car.getPosition() + " " + "Road Number: " + road.getRoadNumber());
+            car.carMove();
         }
-        position = 0;
-        while (position < length) {
-            position++;
-            car.setPosition(position);
-            System.out.println(car.getPosition());
+        car.setPosition(0);
+        road.newRoad();
+        while (car.getPosition() < road.getRoadLength()) {
+            System.out.println("Car Position: " + car.getPosition() + " " + "Road Number: " + road.getRoadNumber());
+            car.carMove();
+
         }
     }
 }

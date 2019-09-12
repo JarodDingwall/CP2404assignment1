@@ -5,21 +5,37 @@ public class Car {
     private int carLength;
     private int roadNumber; // Current road car is on
 
-    Car(){
+    Car() {
         carLength = 1;
         position = 0;
     }
-    public void setRoadNumber(int value) { roadNumber = value;
+
+    public void setRoadNumber(int value) {
+        roadNumber = value;
     }
-    public int getRoadNumber()  { return roadNumber;
+
+    public int getRoadNumber() {
+        return roadNumber;
     }
-    public void setPosition(int newPosition)  { position = newPosition;
+
+    public void setPosition(int newPosition) {
+        position = newPosition;
     }
-    public int getPosition()    { return position;
+
+    public int getPosition() {
+        return position;
     }
-    public void setCarLength(int value) { carLength = value;
+
+    public void setCarLength(int value) {
+        carLength = value;
     }
-    public int getCarLength()   {
+
+    public int getCarLength() {
         return carLength;
+    }
+
+    void carMove(){
+        position++;
+        setPosition(position);
     }
 }
