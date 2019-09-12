@@ -13,14 +13,18 @@ public class Main {
             System.out.println("Car Position: " + car.getPosition() + " " + "Road Number: " + road.getRoadNumber() + " "
                     + "Light Colour: " + trafficLight.getLightColour());
         }
-        car.setPosition(0);
-        road.newRoad();
-        while (car.getPosition() < road.getRoadLength()) {
-            car.carMove();
+        while (trafficLight.getLightColour().equals("red")) {
             trafficLight.operateTrafficLight();
             System.out.println("Car Position: " + car.getPosition() + " " + "Road Number: " + road.getRoadNumber() + " "
                     + "Light Colour: " + trafficLight.getLightColour());
         }
+            car.setPosition(0);
+            road.newRoad();
+            while (car.getPosition() < road.getRoadLength()) {
+                car.carMove();
+                trafficLight.operateTrafficLight();
+                System.out.println("Car Position: " + car.getPosition() + " " + "Road Number: " + road.getRoadNumber() + " "
+                        + "Light Colour: " + trafficLight.getLightColour());
+            }
+        }
     }
-}
-

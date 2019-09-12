@@ -31,7 +31,6 @@ public class TrafficLight {
     int rangeMax = 99;
 
     void operateTrafficLight() {
-        /*setLightColour("green");*/
         Random r = new Random();
         int randomValue = rangeMin + (rangeMax - rangeMin) * r.nextInt();
         if (randomValue < rateOfChange) {
