@@ -8,16 +8,18 @@ public class Main {
         TrafficLight trafficLight = new TrafficLight();
 
         while (car.getPosition() < road.getRoadLength()) {
-            System.out.println("Car Position: " + car.getPosition() + " " + "Road Number: " + road.getRoadNumber());
             car.carMove();
             trafficLight.operateTrafficLight();
+            System.out.println("Car Position: " + car.getPosition() + " " + "Road Number: " + road.getRoadNumber() + " "
+                    + "Light Colour: " + trafficLight.getLightColour());
         }
         car.setPosition(0);
         road.newRoad();
         while (car.getPosition() < road.getRoadLength()) {
-            System.out.println("Car Position: " + car.getPosition() + " " + "Road Number: " + road.getRoadNumber());
             car.carMove();
-
+            trafficLight.operateTrafficLight();
+            System.out.println("Car Position: " + car.getPosition() + " " + "Road Number: " + road.getRoadNumber() + " "
+                    + "Light Colour: " + trafficLight.getLightColour());
         }
     }
 }

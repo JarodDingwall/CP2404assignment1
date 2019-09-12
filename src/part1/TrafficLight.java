@@ -3,7 +3,7 @@ package part1;
 import java.util.Random;
 
 public class TrafficLight {
-    private double rateOfChange;
+    private int rateOfChange;
     private String lightColour;
 
     public TrafficLight() {
@@ -19,7 +19,7 @@ public class TrafficLight {
         return lightColour;
     }
 
-    public void setRateOfChange(double value) {
+    public void setRateOfChange(int value) {
         rateOfChange = value;
     }
 
@@ -34,13 +34,10 @@ public class TrafficLight {
         /*setLightColour("green");*/
         Random r = new Random();
         int randomValue = rangeMin + (rangeMax - rangeMin) * r.nextInt();
-        System.out.println(randomValue);
-        if (randomValue > rateOfChange) {
+        if (randomValue < rateOfChange) {
             setLightColour("red");
-            System.out.println(getLightColour());
         } else {
             setLightColour("green");
-            System.out.println(getLightColour());
         }
     }
 }
