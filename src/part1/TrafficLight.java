@@ -8,7 +8,6 @@ public class TrafficLight {
 
     public TrafficLight() {
         int rateOfChange = 30;
-        /*String lightColour = "Green";*/
     }
 
     public void setLightColour(String value) {
