@@ -3,8 +3,9 @@ package part1;
 import java.util.Random;
 
 public class TrafficLight {
-    private int rateOfChange;
-    private String lightColour;
+    //TrafficLight class dictates whether the car moves to the next section of road.
+    private int rateOfChange; //Represents the frequency that the light changes out.
+    private String lightColour; //
 
     public TrafficLight() {
         int rateOfChange = 30;
