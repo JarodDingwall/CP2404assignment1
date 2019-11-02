@@ -2,13 +2,15 @@ package part1;
 
 import part2.MainFrame;
 
-public class Main {
+public class Main implements Runnable {
+
+    MainFrame mainFrame = new MainFrame();
 //Main simulator class.
     public static void main(String[] args) {
+        new Thread(new Main()).start();
         Car car = new Car();
         Road road = new Road();
         TrafficLight trafficLight = new TrafficLight();
-        MainFrame mainFrame = new MainFrame();
     //First loop runs carMove() and operateTrafficLight() classes until end of road section.
         while (car.getPosition() < road.getRoadLength()) {
             car.carMove();
@@ -31,6 +33,10 @@ public class Main {
                         + "Light Colour: " + trafficLight.getLightColour());
             }
         }
-
-
+        @Override
+    public void run(){
+        while(true){
+            mainFrame.repaint();
+        }
     }
+}
