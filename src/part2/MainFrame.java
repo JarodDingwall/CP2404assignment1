@@ -3,6 +3,9 @@ package part2;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 public class MainFrame extends JFrame {
 
@@ -17,17 +20,63 @@ public class MainFrame extends JFrame {
 
             Simulator simulator = new Simulator();
             this.setContentPane(simulator);
+
+            Move move = new Move();
+            this.addMouseMotionListener(move);
+
+            Click click = new Click();
+            this.addMouseListener(click);
         }
         public class Simulator extends JPanel {
             public void paintComponent(Graphics g) {
                 g.setColor(Color.DARK_GRAY);
                 g.fillRect(0, 0, 1280, 800);
-                g.setColor(Color.GRAY);
                 for (int i = 0; i < 16; i++) {
                     for (int j = 0; j < 9; j++) {
+                        g.setColor(Color.GRAY);
                         g.fillRect(spacing + i * 80, spacing + j * 80 + 80, 80 - 2 * spacing, 80 - 2 * spacing);
                     }
                 }
             }
+        }
+    }
+    class Move implements MouseMotionListener {
+        @Override
+        public void mouseDragged(MouseEvent arg0) {
+        }
+
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            System.out.println("The mouse was moved!");
+            int mx = e.getX();
+            int my = e.getY();
+            System.out.println("X:" + mx + ", Y:" + my);
+        }
+    }
+    class Click implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            System.out.println("The mouse was clicked!");
+        }
+
+        @Override
+        public void mousePressed(MouseEvent mouseEvent) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent mouseEvent) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent mouseEvent) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent mouseEvent) {
+
         }
     }
