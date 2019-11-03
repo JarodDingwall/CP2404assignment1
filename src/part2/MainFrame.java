@@ -47,10 +47,10 @@ public class MainFrame extends JFrame {
                 for (int j = 0; j < 9; j++) {
                     g.setColor(Color.GRAY);
                     if(selected[i][j] == true){
-                        g.setColor(Color.RED);
-                    }
-                    if (mx >= spacing+i*80 && mx < i*80+80-2*spacing && my >= spacing+j*80+106 && my < j*80+26+80+80-2*spacing){
                         g.setColor(Color.WHITE);
+                    }
+                    if (mx >= spacing+i*80 && mx < i*80+80-spacing && my >= spacing+j*80+106 && my < j*80+186-spacing){
+                        g.setColor(Color.LIGHT_GRAY);
                     }
                     g.fillRect(spacing + i * 80, spacing + j * 80 + 80, 80 - 2 * spacing, 80 - 2 * spacing);
                 }
@@ -107,7 +107,7 @@ public class MainFrame extends JFrame {
     public int inBoxX(){
         for(int i = 0; i < 16; i++){
             for(int j = 0; j < 9; j++){
-                if(mx >= spacing+i*80 && mx < i*80+80-2*spacing && my >= spacing+j*80+106 && my < j*80+26+80+80-2*spacing){
+                if(mx >= spacing+i*80 && mx < i*80+80-spacing && my >= spacing+j*80+106 && my < j*80+186-spacing){
                     return i;
                 }
             }
@@ -117,7 +117,7 @@ public class MainFrame extends JFrame {
     public int inBoxY(){
         for(int i = 0; i < 16; i++){
             for(int j = 0; j < 9; j++){
-                if(mx >= spacing+i*80 && mx < i*80+80-2*spacing && my >= spacing+j*80+106 && my < j*80+26+80+80-2*spacing){
+                if(mx >= spacing+i*80 && mx < i*80+80-spacing && my >= spacing+j*80+106 && my < j*80+186-spacing){
                     return j;
                 }
             }
