@@ -38,7 +38,7 @@ public class MainFrame extends JFrame {
             for (int i = 0; i < 16; i++) {
                 for (int j = 0; j < 9; j++) {
                     g.setColor(Color.GRAY);
-                    if (mx >= spacing+i*80 && mx < spacing+i*80+80-2*spacing && my >= spacing+j*80+80+26 && my < spacing+j*80+26+80+80-2*spacing){
+                    if (mx >= spacing+i*80 && mx < i*80+80-2*spacing && my >= spacing+j*80+106 && my < j*80+26+80+80-2*spacing){
                         g.setColor(Color.WHITE);
                     }
                     g.fillRect(spacing + i * 80, spacing + j * 80 + 80, 80 - 2 * spacing, 80 - 2 * spacing);
@@ -65,7 +65,9 @@ public class MainFrame extends JFrame {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            System.out.println("The mouse was clicked!");
+            if(inBoxX() != -1 && inBoxY() != -1){
+                System.out.println("The mouse is in the box [" + inBoxX() + "," +inBoxY() + "]");
+            }
         }
 
         @Override
@@ -87,5 +89,25 @@ public class MainFrame extends JFrame {
         public void mouseExited(MouseEvent mouseEvent) {
 
         }
+    }
+    public int inBoxX(){
+        for(int i = 0; i < 16; i++){
+            for(int j = 0; j < 9; j++){
+                if(mx >= spacing+i*80 && mx < i*80+80-2*spacing && my >= spacing+j*80+106 && my < j*80+26+80+80-2*spacing){
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+    public int inBoxY(){
+        for(int i = 0; i < 16; i++){
+            for(int j = 0; j < 9; j++){
+                if(mx >= spacing+i*80 && mx < i*80+80-2*spacing && my >= spacing+j*80+106 && my < j*80+26+80+80-2*spacing){
+                    return j;
+                }
+            }
+        }
+        return -1;
     }
 }
