@@ -14,12 +14,20 @@ public class MainFrame extends JFrame {
     public int mx = -100;
     public int my = -100;
 
+    boolean [][] selected = new boolean[16][9];
+
     public MainFrame() {
         this.setTitle("Traffic Simulator");
         this.setSize(1286, 829);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setResizable(false);
+
+        for (int i = 0; i < 16; i++) {
+            for (int j = 0; j < 9; j++) {
+                selected[i][j] = false;
+            }
+        }
 
         Simulator simulator = new Simulator();
         this.setContentPane(simulator);
@@ -38,6 +46,9 @@ public class MainFrame extends JFrame {
             for (int i = 0; i < 16; i++) {
                 for (int j = 0; j < 9; j++) {
                     g.setColor(Color.GRAY);
+                    if(selected[i][j] == true){
+                        g.setColor(Color.RED);
+                    }
                     if (mx >= spacing+i*80 && mx < i*80+80-2*spacing && my >= spacing+j*80+106 && my < j*80+26+80+80-2*spacing){
                         g.setColor(Color.WHITE);
                     }
@@ -54,10 +65,10 @@ public class MainFrame extends JFrame {
 
         @Override
         public void mouseMoved(MouseEvent e) {
-            System.out.println("The mouse was moved!");
+            //System.out.println("The mouse was moved!");
             mx = e.getX();
             my = e.getY();
-            System.out.println("X:" + mx + ", Y:" + my);
+            //System.out.println("X:" + mx + ", Y:" + my);
         }
     }
 
@@ -65,8 +76,11 @@ public class MainFrame extends JFrame {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            if(inBoxX() != -1 && inBoxY() != -1){
-                System.out.println("The mouse is in the box [" + inBoxX() + "," +inBoxY() + "]");
+            if(inBoxX() != -1 && inBoxY() != -1) {
+                selected[inBoxX()][inBoxY()] = true;
+                System.out.println("The mouse is in the box [" + inBoxX() + "," + inBoxY() + "]");
+            }else{
+                System.out.println("Please select a box!");
             }
         }
 
